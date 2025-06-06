@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchTokens = async () => {
       try {
-        const res = await fetch("https://dein-vercel-proxy.vercel.app/api/pumpfun");
+        const res = await fetch("https://unser-solana-proxy-olsl.vercel.app/api/pumpfun");
         const json = await res.json();
         const parsed = json.tokens.map((t: any) => ({
           name: t.name,
