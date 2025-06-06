@@ -8,6 +8,7 @@ type Token = {
 
 const Home = () => {
   const [tokens, setTokens] = useState<Token[]>([]);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     const fetchTokens = async () => {
