@@ -22,7 +22,7 @@ export default function Home() {
           symbol: t.symbol,
           priceUsd: t.priceUsd.toFixed(6),
           liquidity: t.liquidity.toLocaleString(),
-          volume24h: t.volume.h24.toLocaleString(),
+          volume: t.volume.toLocaleString(),
           buys: t.txns?.m5?.buys ?? 0,
           sells: t.txns?.m5?.sells ?? 0,
         }));
@@ -52,7 +52,7 @@ export default function Home() {
               <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Symbol</th>
               <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Preis (USD)</th>
               <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Liquidität</th>
-              <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Volumen 24h</th>
+              <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Volumen</th>
               <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Buys (5m)</th>
               <th style={{ padding: "0.5rem", border: "1px solid #ccc" }}>Sells (5m)</th>
             </tr>
@@ -64,7 +64,7 @@ export default function Home() {
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.symbol}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.priceUsd}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.liquidity}</td>
-                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.volume24h}</td>
+                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.volume}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.buys}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.sells}</td>
               </tr>
