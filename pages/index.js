@@ -1,3 +1,4 @@
+import { TokenTable } from '@/components/TokenTable';
 import React from 'react';
 
 export default function Home() {
