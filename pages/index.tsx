@@ -4,27 +4,46 @@ type Token = {
   name: string;
   symbol: string;
   priceUsd: string;
-  liquidity: string;
-  volume: string;
 };
-export default function Home() {
+
+const Home = () => {
   const [tokens, setTokens] = useState<Token[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTokens = async () => {
-      try {
-        const res = await fetch("https://unser-solana-proxy.vercel.app/api/pumpfun");
-        const json = await res.json();
+      const response = await fetch("https://unser-solana-proxy.vercel.app/api/pumpfun"); // 
+      const data = await response.json();
+      setTokens(data.slice(0, 10)); // Nur die ersten 10 für Demo
+    };
+    fetchTokens();
+  }, []);
 
-        const parsed = json.tokens.slice(0, 20).map((t: any) => ({
-          name: t.name,
-          symbol: t.symbol,
-          priceUsd: t.priceUsd.toFixed(6),
-          liquidity: t.liquidity.toLocaleString(),
-          volume: t.volume.toLocaleString(),
-        
-        }));
+  return (
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Live Token-Daten</h1>
+      <table className="min-w-full border">
+        <thead>
+          <tr>
+            <th className="border px-2 py-1">Name</th>
+            <th className="border px-2 py-1">Symbol</th>
+            <th className="border px-2 py-1">Preis (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tokens.map((token, index) => (
+            <tr key={index}>
+              <td className="border px-2 py-1">{token.name}</td>
+              <td className="border px-2 py-1">{token.symbol}</td>
+              <td className="border px-2 py-1">{token.priceUsd}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </main>
+  );
+};
+
+export default Home;
 
         setTokens(parsed);
         setLoading(false);
