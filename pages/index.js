@@ -4,12 +4,9 @@ type Token = {
   name: string;
   symbol: string;
   priceUsd: string;
-  liquidityUsd: string;
-  volumeUsd24h: string;
-  buys: number;
-  sells: number;
+  liquidity: string;
+  volume: string;
 };
-
 export default function Home() {
   const [tokens, setTokens] = useState<Token[]>([]);
   const [loading, setLoading] = useState(true);
