@@ -1,0 +1,61 @@
+import React from 'react';
+
+interface Token {
+  name: string;
+  symbol: string;
+  priceUsd: number;
+  marketCap: number;
+  volume24h: number;
+  category: string;
+}
+
+const mockData: Token[] = [
+  {
+    name: "MiniDogeX",
+    symbol: "MDGX",
+    priceUsd: 0.0000034,
+    marketCap: 3200,
+    volume24h: 250,
+    category: "Babytoken",
+  },
+  {
+    name: "SolShiba",
+    symbol: "SHIBS",
+    priceUsd: 0.0021,
+    marketCap: 85000,
+    volume24h: 1100,
+    category: "Buzz-Token",
+  },
+];
+
+export const TokenTable: React.FC = () => {
+  return (
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-4">Token Live-Übersicht</h2>
+      <table className="w-full table-auto border-collapse border border-gray-400">
+        <thead>
+          <tr className="bg-gray-200 text-left">
+            <th className="border px-4 py-2">Name</th>
+            <th className="border px-4 py-2">Symbol</th>
+            <th className="border px-4 py-2">Preis (USD)</th>
+            <th className="border px-4 py-2">MarketCap</th>
+            <th className="border px-4 py-2">24h Volumen</th>
+            <th className="border px-4 py-2">Kategorie</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mockData.map((token, index) => (
+            <tr key={index} className="hover:bg-blue-100">
+              <td className="border px-4 py-2">{token.name}</td>
+              <td className="border px-4 py-2">{token.symbol}</td>
+              <td className="border px-4 py-2">${token.priceUsd.toFixed(6)}</td>
+              <td className="border px-4 py-2">${token.marketCap.toLocaleString()}</td>
+              <td className="border px-4 py-2">${token.volume24h.toLocaleString()}</td>
+              <td className="border px-4 py-2">{token.category}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
