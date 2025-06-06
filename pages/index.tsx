@@ -63,8 +63,8 @@ export default function Home() {
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.name}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.symbol}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.priceUsd}</td>
-                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.liquidityUsd}</td>
-                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.volumeUsd24h}</td>
+                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.liquidity}</td>
+                <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.volume24h}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.buys}</td>
                 <td style={{ padding: "0.5rem", border: "1px solid #ccc" }}>{token.sells}</td>
               </tr>
