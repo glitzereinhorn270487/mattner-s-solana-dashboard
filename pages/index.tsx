@@ -21,7 +21,7 @@ export default function Home() {
           name: t.name,
           symbol: t.symbol,
           priceUsd: t.priceUsd.toFixed(6),
-          liquidityUsd: t.liquidity.toLocaleString(),
+          liquidity: t.liquidity.toLocaleString(),
           volume24h: t.volume.h24.toLocaleString(),
           buys: t.txns?.m5?.buys ?? 0,
           sells: t.txns?.m5?.sells ?? 0,
