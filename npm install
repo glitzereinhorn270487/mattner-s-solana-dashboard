@@ -1,0 +1,6 @@
+npm install --save-dev typescript @types/react @types/node
+
+    typescript: Der TypeScript-Compiler selbst.
+    @types/react: Typdefinitionen für React, damit TypeScript React-Code verstehen kann.
+    @types/node: Typdefinitionen für Node.js-Umgebung, wichtig für Next.js.
+    --save-dev: Speichert diese Pakete als Entwicklungsabhängigkeiten in deiner package.json.
